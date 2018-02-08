@@ -1,4 +1,4 @@
-package com.calcengine;
+package com.calcengine.profile;
 
 /**
  * Individual Attributes measured by the calculation engine

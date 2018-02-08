@@ -1,4 +1,4 @@
-package com.calcengine;
+package com.calcengine.profile;
 
 import org.junit.Test;
 

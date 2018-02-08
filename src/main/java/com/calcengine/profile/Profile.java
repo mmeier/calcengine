@@ -1,4 +1,4 @@
-package com.calcengine;
+package com.calcengine.profile;
 
 import java.util.ArrayList;
 import java.util.EnumMap;
