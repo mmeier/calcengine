@@ -5,7 +5,7 @@ import com.calcengine.survey.SurveyResponse;
 /**
  * Constraint that requires a SurveyResponse to have a specified percentage of questions have answers.
  */
-public class PercentageConstraint {
+public class PercentageConstraint implements Constraint {
 
 	private final int requiredPercentage;
 	private int percentAnswered;
