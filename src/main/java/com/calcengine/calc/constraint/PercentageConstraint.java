@@ -8,6 +8,7 @@ import com.calcengine.survey.SurveyResponse;
 public class PercentageConstraint {
 
 	private final int requiredPercentage;
+	private int percentAnswered;
 
 	public PercentageConstraint(int requiredPercentage) {
 		this.requiredPercentage = requiredPercentage;
@@ -29,8 +30,15 @@ public class PercentageConstraint {
 			}
 		}
 
-		int percentAnswered = computePercentage(answeredQuestions, totalQuestions);
+		percentAnswered = computePercentage(answeredQuestions, totalQuestions);
 		return percentAnswered < requiredPercentage;
+	}
+
+	/**
+	 * @return Returns the percentage of questions answered by the last SurveyResponse that was checked.
+	 */
+	public int getPercentAnswered() {
+		return percentAnswered;
 	}
 
 	private int computePercentage(int answeredQuestions, int totalQuestions) {

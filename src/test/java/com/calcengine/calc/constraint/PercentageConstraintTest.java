@@ -44,4 +44,18 @@ public class PercentageConstraintTest {
 		assertThat(constraint.violated(response)).isFalse();
 	}
 
+	@Test
+	public void reportsPercentageAnsweredAfterCheck() {
+		PercentageConstraint constraint = new PercentageConstraint(50);
+
+		BasicSurveyResponse response = new BasicSurveyResponse("Test", "Test");
+		response.addQuestionResponse("Q123", "5");
+		response.addQuestionResponse("Q456", null);
+		response.addQuestionResponse("Q789", null);
+		response.addQuestionResponse("Q111", null);
+		constraint.violated(response);
+
+		assertThat(constraint.getPercentAnswered()).isEqualTo(25);
+	}
+
 }
