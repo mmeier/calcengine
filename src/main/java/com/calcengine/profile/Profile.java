@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Individual Profile.
@@ -16,6 +17,20 @@ public class Profile {
 
 	public static Builder builder() {
 		return new Builder();
+	}
+
+	/**
+	 * Creates a simple blank Profile.
+	 *
+	 * @return Blank profile with the given ID.
+	 */
+	public static Profile blankProfile(String id) {
+		Builder builder = new Builder().withId(id);
+
+		Stream.of(Attribute.values())
+				.forEach(attribute -> builder.withAttribute(attribute, 0));
+
+		return builder.build();
 	}
 
 	/*

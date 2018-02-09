@@ -116,4 +116,11 @@ public class ProfileTest {
 					.build();
 		});
 	}
+
+	@Test
+	public void createBlankProfile() {
+		Profile profile = Profile.blankProfile("test");
+
+		assertThat(profile.getId()).isEqualTo("test");
+	}
 }
